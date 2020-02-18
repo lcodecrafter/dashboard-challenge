@@ -1,0 +1,28 @@
+@use "../general/base" as base;
+
+$nav-height: 3.5rem;
+
+.nav {
+  display: flex;
+  background: white;
+
+  .nav-list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-item::before {
+      content: "";
+      position: absolute;
+    }
+
+    a {
+      color: base.$font-color;
+      text-decoration: none;
+    }
+  }
+}

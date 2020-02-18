@@ -1,0 +1,26 @@
+@use "../base" as base;
+
+%button-shared {
+  border-radius: 9.5%;
+  padding: 0.4rem 0.69rem;
+}
+
+.button-active {
+  @extend %button-shared;
+  background: base.$background;
+  color: white;
+}
+
+.button-inactive {
+  @extend %button-shared;
+  border: 1px solid base.$font-color;
+  background: white;
+  color: base.$font-color;
+}
+
+.nav-horizontal {
+  .button-active {
+    position: absolute;
+    left: 93%;
+  }
+}

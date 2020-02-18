@@ -1,0 +1,23 @@
+@use "../../general/base" as general;
+
+.logo {
+  width: 2rem;
+  height: 2rem;
+  position: relative;
+  margin-left: 1%;
+  margin-right: 15%;
+  border-radius: 100%;
+  background: general.$background;
+}
+
+.logo::before {
+  content: "";
+  background: white;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%);
+  margin-bottom: 3px;
+}
