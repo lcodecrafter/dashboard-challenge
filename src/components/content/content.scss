@@ -1,0 +1,8 @@
+@use "../general/base" as base;
+
+.main-content {
+  width: 100%;
+  height: calc(100vh - #{base.$nav-horizontal-height});
+  margin: 1.8rem;
+  background: green;
+}

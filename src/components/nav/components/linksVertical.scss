@@ -1,0 +1,61 @@
+@use "../../general/base" as base;
+
+.nav {
+  &.nav-vertical {
+    height: calc(100vh - #{base.$nav-horizontal-height});
+    width: 3.5rem;
+    display: flex;
+    justify-content: start;
+    border-right: 1px solid #ebedf8;
+
+    .nav-list {
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+
+      &:first-child {
+        margin-top: 1.15rem;
+      }
+
+      .nav-item {
+        height: 2.5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        cursor: pointer;
+      }
+
+      %active {
+        &::before {
+          height: 100%;
+          width: 0.1rem;
+          right: 0;
+          background: base.$background;
+        }
+
+        svg {
+          color: base.$background;
+        }
+      }
+
+      .nav-item:hover {
+        @extend %active;
+      }
+
+      //TODO : apply this class only when the active section belongs to the URL
+      .active:hover {
+        @extend %active;
+      }
+
+      a {
+        display: inline-block;
+        svg {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
