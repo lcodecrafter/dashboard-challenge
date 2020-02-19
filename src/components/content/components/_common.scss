@@ -1,0 +1,16 @@
+.base-container {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  background: transparent;
+
+  &.item-start {
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &.item-end {
+    justify-content: flex-end;
+    align-items: center;
+  }
+}

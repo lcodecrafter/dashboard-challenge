@@ -40,5 +40,10 @@ $nav-height: 3.5rem;
         padding-top: calc(#{$nav-height} / 3);
       }
     }
+
+    .button-active {
+      position: absolute;
+      left: 93%;
+    }
   }
 }

@@ -3,6 +3,7 @@
 .main-content {
   width: 100%;
   height: calc(100vh - #{base.$nav-horizontal-height});
-  margin: 1.8rem;
-  background: green;
+  display: flex;
+  flex-direction: column;
+  margin: 0 1.8rem;
 }

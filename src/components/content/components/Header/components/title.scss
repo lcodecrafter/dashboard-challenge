@@ -1,0 +1,8 @@
+@use "../../common";
+//common provides classes to position the root container as well as the inner items
+.title {
+  h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+}

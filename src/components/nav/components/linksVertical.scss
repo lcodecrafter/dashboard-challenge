@@ -2,7 +2,8 @@
 
 .nav {
   &.nav-vertical {
-    height: calc(100vh - #{base.$nav-horizontal-height});
+    min-height: calc(100vh - #{base.$nav-horizontal-height});
+    height: 100%;
     width: 3.5rem;
     display: flex;
     justify-content: start;

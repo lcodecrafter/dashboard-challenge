@@ -1,0 +1,30 @@
+@use "../../../../general/base" as base;
+@use "../../common";
+
+//common provides classes to position the root container as well as the inner items
+.progressBar {
+  p {
+    padding-left: 1rem;
+    color: base.$font-color;
+    span {
+      color: initial;
+      font-weight: 600;
+    }
+  }
+}
+
+%bars {
+  height: 0.3rem;
+  border-radius: 10px;
+}
+
+.visual-container {
+  @extend %bars;
+  width: 40%;
+  background: #ebedf8;
+}
+
+.progress {
+  @extend %bars;
+  background: base.$background;
+}

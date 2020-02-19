@@ -3,6 +3,7 @@
 %button-shared {
   border-radius: 9.5%;
   padding: 0.4rem 0.69rem;
+  cursor: pointer;
 }
 
 .button-active {
@@ -16,11 +17,4 @@
   border: 1px solid base.$font-color;
   background: white;
   color: base.$font-color;
-}
-
-.nav-horizontal {
-  .button-active {
-    position: absolute;
-    left: 93%;
-  }
 }

@@ -3,7 +3,8 @@ import "./style.scss";
 
 const Button = props => {
   const buttonType =
-    props.type === "inactive " ? "button-inactive" : "button-active";
+    props.type === "inactive" ? "button-inactive" : "button-active";
+
   return <button className={"button " + buttonType}>{props.children}</button>;
 };
 
