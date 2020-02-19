@@ -1,0 +1,14 @@
+@use "../../../../general/base" as base;
+
+.table {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr repeat(2, 2fr) 1fr;
+  grid-template-rows: repeat(5, 0.2fr);
+  grid-column-gap: 50px;
+  grid-row-gap: 25px;
+}
+
+.parentRow {
+  color: base.$font-color;
+}
