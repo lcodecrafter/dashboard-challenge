@@ -1,28 +1,23 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
+import {
+  generateGraphBars,
+  generateGraphLettters,
+  canvasHandler
+} from "./utils";
 import "./chartCircle.scss";
 
 //Depending of the project requirements, I would divide this component in 2 components more to be able to show them separatly. In this case I assume that these graphics will be always shown together
 // props:{title:string; grap:{followersCount:string; bars:{[key:string]:number}}}
 const ChartCircle = props => {
-  const generateGraphBars = bars => {
-    return bars.map((b, index) => (
-      <div key={b + index + Math.random()} className="graph-bar">
-        <div
-          key={b + index + Math.random()}
-          style={{ height: `${b}%` }}
-          className="bar"
-        ></div>
-      </div>
-    ));
-  };
+  const circleContainer = useRef(null); //defining the ref to access to the canvas
 
-  const generateGraphLettters = letters => {
-    return letters.map((l, index) => (
-      <div key={l + index + Math.random()} className="graph-legend">
-        {l}
-      </div>
-    ));
-  };
+  useEffect(() => {
+    if (props.type === "general") {
+      canvasHandler(circleContainer.current, "#b3d6ff", "#0077ff");
+    } else {
+      canvasHandler(circleContainer.current, "#fab9d3", "#f0156d");
+    }
+  });
 
   const classType = props.type === "general" ? "chartGeneral" : "chartRatings";
 
@@ -41,7 +36,11 @@ const ChartCircle = props => {
             </div>
           </div>
         </div>
-        <div className="followers-circle"></div>
+        <div
+          data-percent="65"
+          ref={circleContainer}
+          className="followers-circle"
+        ></div>
       </div>
     </div>
   );
