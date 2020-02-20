@@ -6,17 +6,23 @@
   background: white;
   border: 1px solid #ebedf8;
 
+  $innerPadding: 1.8rem;
+
   .row1 {
     border-bottom: 1px solid #ebedf8;
-    height: 32%;
+    height: 30%;
     width: 100%;
   }
 
   .row2 {
-    height: 60%;
+    height: 70%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 1.8rem;
+    padding: $innerPadding;
+
+    h3 {
+      padding-bottom: $innerPadding;
+    }
   }
 }

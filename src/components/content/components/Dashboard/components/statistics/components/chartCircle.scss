@@ -1,0 +1,101 @@
+@use "../../../../../../general/base" as base;
+
+.charCircle-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  %common {
+    width: 100%;
+  }
+
+  .title {
+    @extend %common;
+    height: 15%;
+    font-weight: 600;
+  }
+
+  .graphics {
+    @extend %common;
+    display: flex;
+    height: 85%;
+
+    .followers-bars {
+      display: flex;
+      width: 65%;
+      flex-direction: column;
+      .followers-count {
+        display: flex;
+        align-items: flex-end;
+        width: 100%;
+        height: 37%;
+        padding-bottom: 0.8rem;
+
+        h2 {
+          font-weight: 600;
+        }
+      }
+
+      .followers-graph-container {
+        width: 100%;
+        height: 63%;
+        display: flex;
+        align-items: flex-end;
+
+        .followers-graph {
+          width: 100%;
+          height: 100%;
+          display: grid;
+          grid-template-columns: repeat(14, 1fr);
+          grid-template-rows: 3.5fr 1fr;
+          grid-row-gap: 10px;
+
+          &.chartGeneral {
+            :nth-child(even) .bar {
+              background: base.$background;
+            }
+
+            :nth-child(odd) .bar {
+              background: #b3d6ff;
+            }
+          }
+
+          &.chartRatings {
+            :nth-child(even) .bar {
+              background: #f0156d;
+            }
+
+            :nth-child(odd) .bar {
+              background: #fab9d3;
+            }
+          }
+
+          .graph-bar {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+
+            .bar {
+              width: 30%;
+              min-width: 30%;
+              border-radius: 2px;
+            }
+          }
+
+          .graph-legend {
+            text-align: center;
+            font-size: 0.6rem;
+            color: base.$font-color;
+          }
+        }
+      }
+    }
+
+    .followers-circle {
+      height: 100%;
+      width: 35%;
+    }
+  }
+}

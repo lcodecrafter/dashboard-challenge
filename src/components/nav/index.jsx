@@ -23,7 +23,7 @@ const Nav = props => {
   };
 
   const navClass = getNavTypeClass(getNavType());
-  console.log(navClass);
+
   return <nav className={"nav " + navClass}>{props.children}</nav>;
 };
 

@@ -1,0 +1,24 @@
+@use "../../../../../general/base" as base;
+
+$innerPadding: 1.8rem;
+
+.stats-container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  %common {
+    height: 100%;
+    padding: $innerPadding;
+  }
+
+  .boxType1 {
+    @extend %common;
+    width: 40%;
+    border-right: 1px solid base.$border-boxes;
+  }
+  .boxType2 {
+    @extend %common;
+    width: 20%;
+  }
+}

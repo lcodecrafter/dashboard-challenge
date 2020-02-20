@@ -1,34 +1,18 @@
 import React from "react";
 import Button from "@/components/general/Button";
+import tableContent from "../fake-data/tableData.json";
 import "./table.scss";
 
 const Table = props => {
   //Data should come from props
-  const data = {
-    parentCols: ["name", "email", "time", "phone", "city", "status"],
-    rows: [
-      {
-        name: "Luffy",
-        email: "luffy@mugywara.com",
-        time: "01:06AM",
-        phone: "215-593-5846",
-        city: "East Blue",
-        status: "sent"
-      },
-      {
-        name: "Zorro",
-        email: "zorro@mugywara.com",
-        time: "01:06AM",
-        phone: "215-593-1234",
-        city: "East Blue",
-        status: "open"
-      }
-    ]
-  };
-
+  const data = tableContent;
   //parentRows:array
   const generateParentRows = parentRows => {
-    return parentRows.map((c, index) => <div className="parentRow" key={c + index}>{c}</div>);
+    return parentRows.map((c, index) => (
+      <div className="parentRow" key={c + index}>
+        {c.toUpperCase()}
+      </div>
+    ));
   };
 
   //childRows:{[property:string]: string | number}[]
@@ -45,7 +29,11 @@ const Table = props => {
       })
       .flat();
 
-    return childRowsArr.map((c, index) => <div key={c + index}>{c}</div>);
+    return childRowsArr.map((c, index) => (
+      <div className="childRow" key={c + index}>
+        {c}
+      </div>
+    ));
   };
 
   return (
