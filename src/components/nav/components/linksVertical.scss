@@ -4,7 +4,8 @@
   &.nav-vertical {
     min-height: calc(100vh - #{base.$nav-horizontal-height});
     height: 100%;
-    width: 3.5rem;
+    width: 3.8rem;
+    min-width: 3rem;
     display: flex;
     justify-content: start;
     border-right: 1px solid #ebedf8;

@@ -1,0 +1,41 @@
+//These are some generic mediaqueries base on the sizes from the google chrome plugin "Web developer". Depending of the project I would adapt them
+
+//desktop
+@mixin media1280() {
+  @media only screen and (max-width: 1280px) {
+    @content;
+  }
+}
+
+//Small tablet landscape
+@mixin media800() {
+  @media only screen and (min-width:768px) and (max-width: 800px) {
+    @content;
+  }
+}
+
+//Tablet portrait
+@mixin media768() {
+    @media only screen and (min-width:600px) and (max-width: 768px) {
+      @content;
+    }
+  }
+
+//Small tablet portrait
+@mixin media600() {
+  @media only screen and (min-width:480px) and (max-width: 600px) {
+    @content;
+  }
+}
+//Mobile landscape
+@mixin media480() {
+  @media only screen and (min-width:320px) and (max-width: 480px) {
+    @content;
+  }
+}
+//Mobile portrait
+@mixin media320() {
+  @media only screen and (min-width:0px) and (max-width: 320px) {
+    @content;
+  }
+}

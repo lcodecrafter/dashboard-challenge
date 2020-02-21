@@ -1,4 +1,5 @@
 @use "../../../../general/base" as base;
+@use "../../../../general/mediaQueries" as mq;
 
 .table {
   width: 100%;
@@ -27,7 +28,39 @@
 
   .button-active,
   .button-inactive {
-    width: 50%;
-    height: 25%;
+    width: 3rem;
+    height: 1.5rem;
+    padding: 0;
   }
+}
+
+@mixin table800-600 {
+  .table {
+    grid-template-columns: 1.5fr 2.3fr 1fr;
+    grid-template-rows: repeat(5, 0.2fr, 1fr);
+  }
+}
+
+@mixin table480-320 {
+  .table {
+    grid-template-columns: 1.5fr 2.3fr;
+    grid-template-rows: repeat(5, 0.2fr);
+  }
+}
+
+@include mq.media800 {
+  @include table800-600;
+}
+@include mq.media768 {
+  @include table800-600;
+}
+
+@include mq.media600 {
+  @include table800-600;
+}
+@include mq.media480 {
+  @include table480-320;
+}
+@include mq.media320 {
+  @include table480-320;
 }

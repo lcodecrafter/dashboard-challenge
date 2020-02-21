@@ -1,4 +1,5 @@
 @use "../../../../../../general/base" as base;
+@use "../../../../../../general/mediaQueries" as mq;
 
 .charCircle-container {
   display: flex;
@@ -92,7 +93,6 @@
         }
       }
     }
-
     .followers-circle {
       display: flex;
       justify-content: center;
@@ -101,9 +101,13 @@
       width: 35%;
 
       canvas {
-        -width: 100%;
-        -height: 100%;
         padding-bottom: 1.3rem;
+      }
+    }
+
+    @include mq.media1280 {
+      .followers-circle {
+        display: none;
       }
     }
   }
