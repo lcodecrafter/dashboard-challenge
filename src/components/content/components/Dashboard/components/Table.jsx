@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Button from "@/components/general/Button";
-import tableContent from "../fake-data/tableData.json";
 import "./table.scss";
 
+// props:{[parentCols:string]:string|number[], [rows:string]:string|number[]}
 const Table = props => {
-  //Data should come from props
-  const data = tableContent;
-  //parentRows:array
+  useEffect(() => {
+    console.log("Se actualizo la tabla.");
+  });
+
+  //parentRows:string[]
   const generateParentRows = parentRows => {
     return parentRows.map((c, index) => (
       <div className="parentRow" key={c + index}>
@@ -19,16 +21,18 @@ const Table = props => {
   const generateChildRows = childRows => {
     const childRowsArr = childRows
       .map(objCol => {
+        let newObject = Object.assign({}, objCol);
         //translate the status property to an accepted type for the buttton component
         const statusToType =
-          objCol.status.toLowerCase() === "sent" ? "active" : "inactive";
+          newObject.status.toLowerCase() === "sent" ? "active" : "inactive";
         //Assign the component to the status property
-        objCol.status = <Button type={statusToType}>{objCol.status}</Button>;
+        newObject.status = (
+          <Button type={statusToType}>{newObject.status}</Button>
+        );
         //return an array with all the properties values
-        return Object.values(objCol);
+        return Object.values(newObject);
       })
       .flat();
-
     return childRowsArr.map((c, index) => (
       <div className="childRow" key={c + index}>
         {c}
@@ -38,8 +42,8 @@ const Table = props => {
 
   return (
     <div className="table">
-      {generateParentRows(data.parentCols)}
-      {generateChildRows(data.rows)}
+      {generateParentRows(props.data.parentCols)}
+      {generateChildRows(props.data.rows)}
     </div>
   );
 };

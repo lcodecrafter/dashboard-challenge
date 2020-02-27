@@ -23,7 +23,7 @@ const ChartCircle = props => {
 
   return (
     <div className="charCircle-container">
-      <h4 className="title">{props.title}</h4>
+      <h4 className="tite">{props.title}</h4>
       <div className="graphics">
         <div className="followers-bars">
           <div className="followers-count">

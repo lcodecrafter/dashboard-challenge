@@ -1,6 +1,7 @@
 import React from "react";
 import Table from "./components/Table";
 import Statistics from "./components/statistics";
+import tableContent from "./fake-data/tableData.json";
 import "./dashboard.scss";
 
 const Dashboard = props => {
@@ -11,7 +12,7 @@ const Dashboard = props => {
       </div>
       <div className="row2">
         <h3>Support Request</h3>
-        <Table></Table>
+        <Table data={tableContent}></Table>
       </div>
     </div>
   );

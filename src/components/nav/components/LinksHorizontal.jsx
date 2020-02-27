@@ -1,17 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./linksHorizontal.scss";
 
 const LinksHorizontal = () => {
   return (
     <ul className="nav-list">
       <li className="nav-item">
-        <a href="/">Overview</a>
+        <Link to="/">Overview</Link>
       </li>
       <li className="nav-item">
-        <a href="/contact">Campaigns</a>
+        <Link to="/campaigns">Campaigns</Link>
       </li>
       <li className="nav-item">
-        <a href="/">Analytics</a>
+        <Link to="/analytics">Analytics</Link>
       </li>
     </ul>
   );
