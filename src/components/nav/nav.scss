@@ -1,7 +1,5 @@
 @use "../general/base" as base;
 
-$nav-height: 3.5rem;
-
 .nav {
   display: flex;
   background: white;
@@ -13,7 +11,7 @@ $nav-height: 3.5rem;
       position: relative;
     }
 
-    .nav-item::before {
+    .item-active::before {
       content: "";
       position: absolute;
     }

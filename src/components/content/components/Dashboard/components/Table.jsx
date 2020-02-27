@@ -1,13 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Button from "@/components/general/Button";
 import "./table.scss";
 
 // props:{[parentCols:string]:string|number[], [rows:string]:string|number[]}
 const Table = props => {
-  useEffect(() => {
-    console.log("Se actualizo la tabla.");
-  });
-
   //parentRows:string[]
   const generateParentRows = parentRows => {
     return parentRows.map((c, index) => (

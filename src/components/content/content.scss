@@ -1,9 +1,9 @@
 @use "../general/base" as base;
 
 .main-content {
-  width: 100%;
-  height: calc(100vh - #{base.$nav-horizontal-height});
+  width: calc(100vw - #{base.$nav-horizontal-height});
+  min-height: calc(100vh - #{base.$nav-horizontal-height});
   display: flex;
   flex-direction: column;
-  margin: 0 1.8rem;
+  padding: 0 1.8rem;
 }

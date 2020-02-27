@@ -7,36 +7,36 @@ import {
   faEnvelope,
   faCog
 } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./linksVertical.scss";
 
 const LinksVertical = () => {
   return (
     <ul className="nav-list">
       <li className="nav-item">
-        <Link to="/">
+        <NavLink to="/" exact activeClassName="item-active">
           <FontAwesomeIcon icon={faTachometerAlt} />
-        </Link>
+        </NavLink>
       </li>
       <li className="nav-item">
-        <Link to="/">
+        <NavLink to="/campaigns" activeClassName="item-active">
           <FontAwesomeIcon icon={faComments} />
-        </Link>
+        </NavLink>
       </li>
       <li className="nav-item">
-        <Link to="/">
+        <NavLink to="/analytics" activeClassName="item-active">
           <FontAwesomeIcon icon={faFolder} />
-        </Link>
+        </NavLink>
       </li>
       <li className="nav-item">
-        <Link to="/">
+        <NavLink to="/notset1">
           <FontAwesomeIcon icon={faEnvelope} />
-        </Link>
+        </NavLink>
       </li>
       <li className="nav-item">
-        <Link to="/">
+        <NavLink to="/notset2">
           <FontAwesomeIcon icon={faCog} />
-        </Link>
+        </NavLink>
       </li>
     </ul>
   );

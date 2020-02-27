@@ -17,9 +17,9 @@ const Campaigns = () => {
         <Nav>
           <LinksVertical></LinksVertical>
         </Nav>
-        <div>
+        <section className="main-content">
           <h1>Campaings!</h1>
-        </div>
+        </section>
       </div>
     </div>
   );
