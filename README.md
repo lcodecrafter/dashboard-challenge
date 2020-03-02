@@ -21,8 +21,6 @@ I intend to make the most reusable project(it was the part where I put more effo
  - Improve webpack build and adapt it to prod enviroment.    
  - Write Tests for the components
  - Improve the mobile version
- - Add routing with Reactrouter
- - Implemnent nav logic to apply already done class .active (just to be able to know in what sectio are we)
  - Get the data from a rest api fake like this https://github.com/typicode/json-server
  - Split graphics component
  - Improve circle progress to get the percentage

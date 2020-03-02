@@ -1,7 +1,7 @@
 @use "../base" as base;
 
 %button-shared {
-  border-radius: 9.5%;
+  border-radius: 9.8%;
   padding: 0.4rem 0.69rem;
   cursor: pointer;
 }
@@ -10,6 +10,7 @@
   @extend %button-shared;
   background: base.$background;
   color: white;
+  border-color: transparent;
 }
 
 .button-inactive {

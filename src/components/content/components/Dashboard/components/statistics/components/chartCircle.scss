@@ -44,13 +44,16 @@
         display: flex;
         align-items: flex-end;
 
+        $barSize:0.6rem;// its equals to the font-size of letters in the second row
+
         .followers-graph {
           width: 100%;
           height: 100%;
           display: grid;
-          grid-template-columns: repeat(14, 1fr);
+          grid-template-columns: repeat(14, $barSize);
           grid-template-rows: 3.5fr 1fr;
           grid-row-gap: 10px;
+          column-gap: $barSize;
 
           &.chartGeneral {
             :nth-child(even) .bar {
@@ -79,15 +82,14 @@
             align-items: flex-end;
 
             .bar {
-              width: 30%;
-              min-width: 30%;
-              border-radius: 2px;
+              width: 100%;
+              border-radius: 2.5px;
             }
           }
 
           .graph-legend {
             text-align: center;
-            font-size: 0.6rem;
+            font-size: $barSize;
             color: base.$font-color;
           }
         }
