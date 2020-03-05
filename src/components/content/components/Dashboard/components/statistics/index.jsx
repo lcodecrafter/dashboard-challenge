@@ -5,26 +5,37 @@ import graphData from "../../fake-data/graphData.json";
 import terms from "../../fake-data/terms.json";
 import "./statistics.scss";
 
-//what comes from graphData should be passed as props as consequence of http request
+//props:{graph:{}, terms:{}}
 const Statistics = props => {
+  const initChartData = {
+    followersCount: "0",
+    bars: {}
+  };
+
+  const initTermsData = {};
+
   return (
     <div className="stats-container">
       <div className="boxType1">
         <ChartCircle
           type="general"
           title="General Results"
-          graph={graphData.general.graph}
+          graph={
+            props.graph.general ? props.graph.general.graph : initChartData
+          }
         ></ChartCircle>
       </div>
       <div className="boxType1">
         <ChartCircle
           type="ratings"
           title="Ratings by category"
-          graph={graphData.ratings.graph}
+          graph={
+            props.graph.ratings ? props.graph.ratings.graph : initChartData
+          }
         ></ChartCircle>
       </div>
       <div className="boxType2">
-        <Terms terms={terms}></Terms>
+        <Terms terms={props.terms ? props.terms : initTermsData}></Terms>
       </div>
     </div>
   );

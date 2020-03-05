@@ -1,0 +1,105 @@
+{
+  "table": {
+    "parentCols": ["name", "email", "time", "phone number", "city", "status"],
+    "rows": [
+      {
+        "name": "Luffy",
+        "email": "luffy@mugywara.com",
+        "time": "01:06AM",
+        "phone": "215-593-5846",
+        "city": "East Blue",
+        "status": "sent"
+      },
+      {
+        "name": "Zorro",
+        "email": "zorro@mugywara.com",
+        "time": "01:06AM",
+        "phone": "215-593-1234",
+        "city": "East Blue",
+        "status": "sent"
+      },
+      {
+        "name": "Nami",
+        "email": "nami@mugywara.com",
+        "time": "01:06AM",
+        "phone": "215-523-1234",
+        "city": "East Blue",
+        "status": "sent"
+      },
+      {
+        "name": "Robin",
+        "email": "robin@mugywara.com",
+        "time": "01:06AM",
+        "phone": "215-761-1234",
+        "city": "East Blue",
+        "status": "sent"
+      },
+      {
+        "name": "Franky",
+        "email": "franky@mugywara.com",
+        "time": "01:06AM",
+        "phone": "215-761-1234",
+        "city": "Grand line",
+        "status": "open"
+      },
+      {
+        "name": "Chopper",
+        "email": "chopper@mugywara.com",
+        "time": "01:06AM",
+        "phone": "215-761-1234",
+        "city": "Grand line",
+        "status": "open"
+      }
+    ]
+  },
+  "terms":{
+    "Term1": "85.08",
+    "Term2": "1.76",
+    "Term3": "33.42",
+    "Term4": "75.11"
+  },
+  "graph":{
+    "general": {
+      "graph": {
+        "followersCount": "9.401",
+        "bars": {
+          "a": 60,
+          "b": 70,
+          "c": 60,
+          "d": 75,
+          "e": 35,
+          "f": 80,
+          "g": 100,
+          "h": 60,
+          "i": 70,
+          "j": 60,
+          "l": 75,
+          "m": 35,
+          "n": 80,
+          "o": 100
+        }
+      }
+    },
+    "ratings": {
+      "graph": {
+        "followersCount": "3.900",
+        "bars": {
+          "a": 60,
+          "b": 70,
+          "c": 60,
+          "d": 75,
+          "e": 35,
+          "f": 80,
+          "g": 100,
+          "h": 60,
+          "i": 70,
+          "j": 60,
+          "l": 75,
+          "m": 35,
+          "n": 80,
+          "o": 100
+        }
+      }
+    }
+  }  
+}

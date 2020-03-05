@@ -17,7 +17,7 @@ const ChartCircle = props => {
     } else {
       canvasHandler(circleContainer.current, "#fab9d3", "#f0156d");
     }
-  });
+  }, []);
 
   const classType = props.type === "general" ? "chartGeneral" : "chartRatings";
 
