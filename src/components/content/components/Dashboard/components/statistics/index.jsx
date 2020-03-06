@@ -1,8 +1,6 @@
 import React from "react";
 import ChartCircle from "./components/ChartCircle";
 import Terms from "./components/Terms";
-import graphData from "../../fake-data/graphData.json";
-import terms from "../../fake-data/terms.json";
 import "./statistics.scss";
 
 //props:{graph:{}, terms:{}}

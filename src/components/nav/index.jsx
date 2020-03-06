@@ -6,9 +6,9 @@ const Nav = props => {
   const getNavType = () => {
     //return an array with the components names we are interested in. It there should be one element.
     const navType = React.Children.map(props.children, child => {
-      return ["LinksHorizontal", "LinksVertical"].find(
-        t => t === child.type.name
-      );
+      return child
+        ? ["LinksHorizontal", "LinksVertical"].find(t => t === child.type.name)
+        : undefined;
     });
 
     return navType.length !== 0 ? navType[0] : "";

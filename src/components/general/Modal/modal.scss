@@ -1,7 +1,31 @@
-.modal{
-    position:absolute;
+@use "../base" as base;
+.modal-wrapper {
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background: rgb(138, 137, 137, 0.5);//color with opacity avoiding to use opacity property
+
+  .modal {
+    position: absolute;
     width: 70%;
-    z-index: 100;
+    left: 15%;
+    top: 50%;
+    transform: translateY(-50%);
     background: white;
+    border: 1px solid base.$font-color;
     box-shadow: 0px 2px 2px 0px;
+    .cross {
+      position: absolute;
+      width: 1rem;
+      height: 1rem;
+      left: calc(100% - 0.5rem);
+      top: -0.5rem;
+      background: white;
+      border-radius: 50%;
+      font-size: medium;
+      cursor: pointer;
+    }
+  }
 }
