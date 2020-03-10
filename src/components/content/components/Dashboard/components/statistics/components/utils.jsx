@@ -1,20 +1,19 @@
 import React from "react";
 
 export const generateGraphBars = bars => {
-  return bars.map((b, index) => (
-    <div key={b + index + Math.random()} className="graph-bar">
-      <div
-        key={b + index + Math.random()}
-        style={{ height: `${b}%` }}
-        className="bar"
-      ></div>
-    </div>
-  ));
+  return bars.map((b, index) => {
+    const randomKey = b + index + Math.random(); // Use the index is not a good practise but in this case its fairly safe taking into account that its added 2 more variables
+    return (
+      <div key={randomKey} className="graph-bar">
+        <div key={randomKey + 2} style={{ height: `${b}%` }} className="bar" />
+      </div>
+    );
+  });
 };
 
 export const generateGraphLettters = letters => {
-  return letters.map((l, index) => (
-    <div key={l + index + Math.random()} className="graph-legend">
+  return letters.map(l => (
+    <div key={l + Math.random()} className="graph-legend">
       {l}
     </div>
   ));
@@ -32,15 +31,15 @@ export const canvasHandler = (graph, background, progress) => {
 
   const radius = (options.size - options.lineWidth) / 2;
 
-  let canvas = document.createElement("canvas");
+  const canvas = document.createElement("canvas");
   canvas.width = options.size;
   canvas.height = options.size;
-  let ctx = canvas.getContext("2d");
+  const ctx = canvas.getContext("2d");
 
-  const drawCircle = function(color, lineWidth, percent) {
-    percent = Math.min(Math.max(0, percent || 1), 1);
+  const drawCircle = (color, lineWidth, percent) => {
+    const newPercent = Math.min(Math.max(0, percent || 1), 1);
     ctx.beginPath();
-    ctx.arc(0, 0, radius, 0, Math.PI * 2 * percent, false);
+    ctx.arc(0, 0, radius, 0, Math.PI * 2 * newPercent, false);
     ctx.strokeStyle = color;
     ctx.lineCap = "round"; // butt, round or square
     ctx.lineWidth = lineWidth;

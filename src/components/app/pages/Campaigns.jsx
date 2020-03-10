@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import React from "react";
 import Nav from "@/components/nav";
 import Logo from "@/components/nav/components/Logo";
@@ -9,13 +10,13 @@ const Campaigns = () => {
   return (
     <div>
       <Nav>
-        <Logo></Logo>
-        <LinksHorizontal></LinksHorizontal>
+        <Logo />
+        <LinksHorizontal />
         <Button>Premium</Button>
       </Nav>
       <div className="main">
         <Nav>
-          <LinksVertical></LinksVertical>
+          <LinksVertical />
         </Nav>
         <section className="main-content">
           <h1>Campaings!</h1>

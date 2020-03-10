@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 import React, { useState } from "react";
 // --- Begin Navs ---
 import Nav from "@/components/nav";
@@ -10,31 +11,32 @@ import PremiumFeatures from "@/components/nav/components/PremiumFeatures";
 // --- End Navs ---
 // --- Begin Content ---
 import Content from "@/components/content";
+
 const Home = () => {
   const [modalPremiumVisibility, setMPVisibility] = useState(false);
 
-  //status>boolean
-  const manageModalVisibility = e => {
+  // status>boolean
+  const manageModalVisibility = () => {
     setMPVisibility(!modalPremiumVisibility);
   };
 
   return (
     <div>
       <Nav>
-        <Logo></Logo>
-        <LinksHorizontal></LinksHorizontal>
+        <Logo />
+        <LinksHorizontal />
         <Button showModal={manageModalVisibility}>Premium</Button>
         {modalPremiumVisibility ? (
           <Modal showModal={manageModalVisibility}>
-            <PremiumFeatures></PremiumFeatures>
+            <PremiumFeatures />
           </Modal>
         ) : null}
       </Nav>
       <div className="main">
         <Nav>
-          <LinksVertical></LinksVertical>
+          <LinksVertical />
         </Nav>
-        <Content></Content>
+        <Content />
       </div>
     </div>
   );

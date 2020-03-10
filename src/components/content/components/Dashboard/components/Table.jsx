@@ -3,33 +3,35 @@ import Button from "@/components/general/Button";
 import "./table.scss";
 
 // props:{[parentCols:string]:string|number[], [rows:string]:string|number[]}
-const Table = props => {
-  //parentRows:string[]
+const Table = ({ data }) => {
+  // parentRows:string[]
   const generateParentRows = parentRows => {
-    return parentRows.map((c, index) => (
-      <div className="parentRow" key={c + index}>
+    return parentRows.map(c => (
+      <div className="parentRow" key={`${c}parent`}>
         {c.toUpperCase()}
       </div>
     ));
   };
 
-  //childRows:{[property:string]: string | number}[]
+  // childRows:{[property:string]: string | number}[]
   const generateChildRows = childRows => {
     const childRowsArr = childRows
       .map(objCol => {
-        let newObject = Object.assign({}, objCol);
-        //translate the status property to an accepted type for the buttton component
+        const newObject = { ...objCol };
+        // translate the status property to an accepted type for the buttton component
         const statusToType =
           newObject.status.toLowerCase() === "sent" ? "active" : "inactive";
-        //Assign the component to the status property
+        // Assign the component to the status property
         newObject.status = (
           <Button type={statusToType}>{newObject.status}</Button>
         );
-        //return an array with all the properties values
+        // return an array with all the properties values
         return Object.values(newObject);
       })
       .flat();
     return childRowsArr.map((c, index) => (
+      // index is needed because there is a string per element in the array and no way to difference between them
+      // eslint-disable-next-line react/no-array-index-key
       <div className="childRow" key={c + index}>
         {c}
       </div>
@@ -38,8 +40,8 @@ const Table = props => {
 
   return (
     <div className="table">
-      {generateParentRows(props.data.parentCols)}
-      {generateChildRows(props.data.rows)}
+      {generateParentRows(data.parentCols)}
+      {generateChildRows(data.rows)}
     </div>
   );
 };

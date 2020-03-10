@@ -4,12 +4,12 @@ import Dashboard from "./components/Dashboard";
 import Pagination from "./components/Pagination";
 import "./content.scss";
 
-const Content = props => {
+const Content = () => {
   return (
     <section className="main-content">
-      <Header></Header>
-      <Dashboard></Dashboard>
-      <Pagination></Pagination>
+      <Header />
+      <Dashboard />
+      <Pagination />
     </section>
   );
 };

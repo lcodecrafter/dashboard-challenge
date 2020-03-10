@@ -9,13 +9,13 @@ const Analytics = () => {
   return (
     <div>
       <Nav>
-        <Logo></Logo>
-        <LinksHorizontal></LinksHorizontal>
+        <Logo />
+        <LinksHorizontal />
         <Button>Premium</Button>
       </Nav>
       <div className="main">
         <Nav>
-          <LinksVertical></LinksVertical>
+          <LinksVertical />
         </Nav>
         <div>
           <h1>Analytics</h1>

@@ -1,0 +1,17 @@
+{
+  "parser": "babel-eslint",
+  "plugins": ["prettier", "react", "jsx-a11y", "import"],
+  "extends": ["airbnb", "prettier"],
+  "rules": {
+    "quotes": "off",
+    "prettier/prettier": ["error"],
+    "import/no-named-as-default": "off",
+    "react/prop-types": 0
+  },
+  "env": {
+    "browser": true
+  },
+  "settings": {
+    "import/resolver": "webpack"
+  }
+}

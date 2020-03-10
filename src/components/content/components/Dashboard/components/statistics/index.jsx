@@ -3,8 +3,8 @@ import ChartCircle from "./components/ChartCircle";
 import Terms from "./components/Terms";
 import "./statistics.scss";
 
-//props:{graph:{}, terms:{}}
-const Statistics = props => {
+// props:{graph:{}, terms:{}}
+const Statistics = ({ graph, terms }) => {
   const initChartData = {
     followersCount: "0",
     bars: {}
@@ -18,22 +18,18 @@ const Statistics = props => {
         <ChartCircle
           type="general"
           title="General Results"
-          graph={
-            props.graph.general ? props.graph.general.graph : initChartData
-          }
-        ></ChartCircle>
+          graph={graph.general ? graph.general.graph : initChartData}
+        />
       </div>
       <div className="boxType1">
         <ChartCircle
           type="ratings"
           title="Ratings by category"
-          graph={
-            props.graph.ratings ? props.graph.ratings.graph : initChartData
-          }
-        ></ChartCircle>
+          graph={graph.ratings ? graph.ratings.graph : initChartData}
+        />
       </div>
       <div className="boxType2">
-        <Terms terms={props.terms ? props.terms : initTermsData}></Terms>
+        <Terms terms={terms || initTermsData} />
       </div>
     </div>
   );

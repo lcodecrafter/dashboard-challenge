@@ -1,16 +1,17 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const Sass = require("sass");
 
 module.exports = {
   mode: "development",
   entry: {
-    app: "./src/index.js"
+    app: "./src/index.jsx"
   },
   devtool: "inline-source-map",
   devServer: {
     contentBase: path.join(__dirname, "./"), // where dev server will look for static files, not compiled
-    publicPath: "/", //relative path to output path where  devserver will look for compiled files
+    publicPath: "/", // relative path to output path where  devserver will look for compiled files
     hot: true,
     historyApiFallback: true
   },
@@ -31,9 +32,7 @@ module.exports = {
         // config for es6 jsx
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
+        use: ["babel-loader", "eslint-loader"]
       },
       {
         // config for sass compilation
@@ -47,7 +46,7 @@ module.exports = {
             loader: "sass-loader",
             options: {
               sourceMap: true,
-              implementation: require("sass")
+              implementation: Sass
             }
           }
         ]
